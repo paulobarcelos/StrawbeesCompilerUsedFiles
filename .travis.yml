@@ -1,7 +1,8 @@
-services:
-  - docker
+language: node_js
+node_js:
+- '11.1.0'
 script:
-  - "docker run -i -v \"${PWD}:/transfer\"  daald/ubuntu32:trusty /bin/bash -c \"linux32 --32bit i386 sudo sh transfer/setup.sh \""
+  - sudo sh setup.sh
 branches:
   only:
   - master
