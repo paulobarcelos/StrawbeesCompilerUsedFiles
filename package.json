@@ -1,0 +1,25 @@
+{
+  "name": "strawbeescompilerusedfiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "quirkbot-arduino-builder": "0.1.1",
+    "quirkbot-arduino-hardware": "0.4.11",
+    "quirkbot-arduino-library": "2.7.2",
+    "quirkbot-avr-gcc": "1.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulobarcelos/StrawbeesCompilerUsedFiles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulobarcelos/StrawbeesCompilerUsedFiles/issues"
+  },
+  "homepage": "https://github.com/paulobarcelos/StrawbeesCompilerUsedFiles#readme"
+}
