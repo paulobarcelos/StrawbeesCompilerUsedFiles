@@ -15,7 +15,7 @@ mkdir "$ROOT/firmware"
 # do a first build and capture the output, so we can extract some info from it
 echo "#########################################################################"
 echo "doing first build"
-perl "$ROOT/tracefile.perl" -uef \
+#perl "$ROOT/tracefile.perl" -uef \
 "$ROOT/node_modules/quirkbot-arduino-builder/tools/arduino-builder" \
 -hardware="$ROOT/node_modules" \
 -hardware="$ROOT/node_modules/quirkbot-arduino-builder/tools/hardware" \
