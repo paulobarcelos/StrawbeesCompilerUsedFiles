@@ -1,0 +1,8 @@
+.DS_Store
+/dist
+/build
+/node_modules
+/compiler
+/image.iso
+/image/temp
+/package-lock.json
