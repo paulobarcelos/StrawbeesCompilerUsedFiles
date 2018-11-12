@@ -32,9 +32,6 @@ cat "$ROOT/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$ROOT/build.sh
 # capture the "link and copy" part
 cat "$ROOT/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> "$ROOT/build.sh"
 
-# final build script
-cat "$ROOT/build.sh"
-
 # tracefile all the used files
 echo "#########################################################################"
 echo "discovering all used files"
