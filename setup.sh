@@ -23,7 +23,7 @@ echo "doing first build"
 -fqbn="quirkbot-arduino-hardware:avr:quirkbot" \
 -ide-version=10607 \
 -verbose \
-"$ROOT/firmware/firmware.ino"
+"$ROOT/firmware/firmware.ino" \
 >> "$ROOT/output.txt"
 
 # capture the compilation part
