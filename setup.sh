@@ -36,6 +36,6 @@ perl "$ROOT/tracefile.perl" -uef \
 "$BASE/firmware/firmware.ino" \
 | grep "$BASE/node_modules" >> "$BASE/rawtrace"
 cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
-
+cat "$BASE/rawtrace"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 cat "$BASE/trace"

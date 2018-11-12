@@ -1,13 +1,6 @@
 language: node_js
 node_js:
 - '11.1.0'
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get --yes --force-yes install realpath
-  - sudo apt-get --yes --force-yes install tree
-  - sudo apt-get --yes --force-yes install curl
-  - sudo apt-get --yes --force-yes install wget
-  - sudo apt-get --yes --force-yes install strace
 script:
   - sudo sh setup.sh
 branches:
