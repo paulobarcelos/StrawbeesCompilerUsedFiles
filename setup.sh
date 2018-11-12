@@ -26,9 +26,9 @@ perl "$ROOT/tracefile.perl" -uef \
 -fqbn="quirkbot-arduino-hardware:avr:quirkbot" \
 -ide-version=10607 \
 -verbose \
-"$ROOT/firmware/firmware.ino" \
-| grep "$ROOT/node_modules" >> "$ROOT/rawtrace"
-cat "$ROOT/rawtrace" | xargs -n1 realpath >> "$ROOT/trace"
-cat "$ROOT/rawtrace"
-echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-cat "$ROOT/trace"
+"$ROOT/firmware/firmware.ino"
+#| grep "$ROOT/node_modules" >> "$ROOT/rawtrace"
+#cat "$ROOT/rawtrace" | xargs -n1 realpath >> "$ROOT/trace"
+#cat "$ROOT/rawtrace"
+#echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+#cat "$ROOT/trace"
