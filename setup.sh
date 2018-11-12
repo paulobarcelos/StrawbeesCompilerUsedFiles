@@ -4,18 +4,6 @@ cd $SCRIPTPATH
 # store the root dir
 ROOT=$(pwd)
 
-# install dependencies
-echo "#########################################################################"
-echo "install dependencies"
-sudo apt-get -qq update
-sudo apt-get --yes --force-yes install realpath
-sudo apt-get --yes --force-yes install tree
-sudo apt-get --yes --force-yes install curl
-sudo apt-get --yes --force-yes install wget
-sudo apt-get --yes --force-yes install strace
-
-npm install
-
 # create temp dir and setup files
 echo "#########################################################################"
 echo "creating directories"
