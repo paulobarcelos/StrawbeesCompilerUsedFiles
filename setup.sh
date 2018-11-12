@@ -8,14 +8,11 @@ ROOT=$(pwd)
 echo "#########################################################################"
 echo "creating directories"
 rm -rf "$ROOT/build"
-rm -rf "$ROOT/firmware"
 mkdir "$ROOT/build"
-mkdir "$ROOT/firmware"
 
 # do a first build and capture the output, so we can extract some info from it
 echo "#########################################################################"
 echo "doing first build"
-#perl "$ROOT/tracefile.perl" -uef \
 "$ROOT/node_modules/quirkbot-arduino-builder/tools/arduino-builder" \
 -hardware="$ROOT/node_modules" \
 -hardware="$ROOT/node_modules/quirkbot-arduino-builder/tools/hardware" \
@@ -27,8 +24,20 @@ echo "doing first build"
 -ide-version=10607 \
 -verbose \
 "$ROOT/firmware/firmware.ino"
-#| grep "$ROOT/node_modules" >> "$ROOT/rawtrace"
-#cat "$ROOT/rawtrace" | xargs -n1 realpath >> "$ROOT/trace"
-#cat "$ROOT/rawtrace"
-#echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-#cat "$ROOT/trace"
+>> "$ROOT/output.txt"
+
+# capture the compilation part
+cat "$ROOT/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$ROOT/build.sh"
+
+# capture the "link and copy" part
+cat "$ROOT/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> "$ROOT/build.sh"
+
+# final build script
+cat "$ROOT/build.sh"
+
+# tracefile all the used files
+echo "#########################################################################"
+echo "discovering all used files"
+perl "$ROOT/tracefile.perl" -uef sh "$ROOT/build.sh" | grep $ROOT >> "$ROOT/rawtrace"
+cat "$ROOT/rawtrace" | xargs -n1 realpath >> "$ROOT/trace"
+cat "$ROOT/trace"
