@@ -29,7 +29,7 @@ cat "$ROOT/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> 
 
 rm -rf "$ROOT/build"
 mkdir "$ROOT/build"
-perl "$ROOT/tracefile.perl" -uef sh "$ROOT/build.sh" | grep "$ROOT/node_modules" >> "$ROOT/rawtrace"
-cat "$ROOT/rawtrace" | xargs -n1 realpath >> "$ROOT/trace"’
+perl "$ROOT/tracefile.perl" -uef sh "$ROOT/build.sh" | grep $ROOT/node_modules >> "$ROOT/rawtrace"
+cat "$ROOT/rawtrace" | xargs -n1 realpath >> "$ROOT/trace"
 echo "#########################################################################"
 cat "$ROOT/trace"
