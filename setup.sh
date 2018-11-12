@@ -12,13 +12,6 @@ rm -rf "$ROOT/firmware"
 mkdir "$ROOT/build"
 mkdir "$ROOT/firmware"
 
-# create the base firmware
-echo "#########################################################################"
-echo "creating base firmware"
-echo '#include "Quirkbot.h"
-void setup(){}
-void loop(){}' > "$ROOT/firmware/firmware.ino"
-
 # do a first build and capture the output, so we can extract some info from it
 echo "#########################################################################"
 echo "doing first build"
@@ -33,9 +26,9 @@ perl "$ROOT/tracefile.perl" -uef \
 -fqbn="quirkbot-arduino-hardware:avr:quirkbot" \
 -ide-version=10607 \
 -verbose \
-"$BASE/firmware/firmware.ino" \
-| grep "$BASE/node_modules" >> "$BASE/rawtrace"
-cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
-cat "$BASE/rawtrace"
+"$ROOT/firmware/firmware.ino" \
+| grep "$ROOT/node_modules" >> "$ROOT/rawtrace"
+cat "$ROOT/rawtrace" | xargs -n1 realpath >> "$ROOT/trace"
+cat "$ROOT/rawtrace"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-cat "$BASE/trace"
+cat "$ROOT/trace"
